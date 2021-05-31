@@ -3,12 +3,13 @@ import "firebase/auth";
 import "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCGk_jeoWQ4mStVaeL4QvTTjg0bcsHYr1k",
-  authDomain: "linkedin-clone-15a05.firebaseapp.com",
-  projectId: "linkedin-clone-15a05",
-  storageBucket: "linkedin-clone-15a05.appspot.com",
-  messagingSenderId: "129955974697",
-  appId: "1:129955974697:web:7e2217bb53d79082cfd638",
+  apiKey: "AIzaSyDnX95OL1SvLTE7IX5RFjOgepVM_YH9Hy8",
+  authDomain: "twitter-clone-redux.firebaseapp.com",
+  projectId: "twitter-clone-redux",
+  storageBucket: "twitter-clone-redux.appspot.com",
+  messagingSenderId: "459994750881",
+  appId: "1:459994750881:web:21cecadd81399b921ef5e0",
+  measurementId: "G-XTC6VSG942"
 };
 
 export const firebaseApp = firebase.initializeApp(firebaseConfig);
