@@ -1,49 +1,50 @@
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      colors:{
-        primary:{
-          dark:"#034f7e",
-          base:"#1DA1F2",
-          light:"#7ec9f6",
+      colors: {
+        primary: {
+          dark: "#034f7e",
+          base: "#1DA1F2",
+          light: "#7ec9f6",
         },
-        gray:{
-          dark:"#657786",
-          light:"#AAB8C2",
-          extraLight:"#E1E8ED",
-          lightest:"#F5F8FA",
+        gray: {
+          dark: "#657786",
+          light: "#AAB8C2",
+          extraLight: "#E1E8ED",
+          lightest: "#F5F8FA",
         },
-        black:"#14171A"
+        black: "#14171A",
       },
       minWidth: {
-        '0': '0',
-        '1/4': '25%',
-        '1/2': '45vw',
-        '3/4': '75%',
-        'full': '100%',
-      }
+        "0": "0",
+        "1/4": "25%",
+        "1/2": "45vw",
+        "3/4": "75%",
+        full: "100%",
+      },
     },
     screens: {
-      '2xl': {'max': '1535px'},
+      "2xl": { max: "1535px" },
       // => @media (max-width: 1535px) { ... }
 
-      'xl': {'max': '1279px'},
+      xl: { max: "1279px" },
       // => @media (max-width: 1279px) { ... }
-
-      'lg': {'max': '810px'},
+      xlg: { max: "1150px" },
+      // => @media (max-width:100px){...} //is created personally
+      lg: { max: "900px" },
       // => @media (max-width: 1023px) { ... }
 
-      'md': {'max': '767px'},
+      md: { max: "767px" },
       // => @media (max-width: 767px) { ... }
 
-      'sm': {'max': '410px'},
+      sm: { max: "500px" },
       // => @media (max-width: 639px) { ... }
-    }
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};

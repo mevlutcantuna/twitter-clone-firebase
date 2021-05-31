@@ -2,23 +2,23 @@ import React from "react";
 
 import CloseIcon from "@material-ui/icons/Close";
 import { auth } from "../../firebase";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 const SignIn = (props) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const user = useSelector((state) => state.authReducer.user);
-  console.log(user);
+
+  //const user = useSelector((state) => state.authReducer.user);
 
   const history = useHistory();
-
   const dispatch = useDispatch();
 
   const submit = () => {
     auth.signInWithEmailAndPassword(email, password).then((res) => {
       dispatch({ type: "GET_USER", payload: res });
       history.push("/home");
+      localStorage.setItem("user", JSON.stringify(res.user));
     });
   };
 

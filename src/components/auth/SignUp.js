@@ -4,6 +4,7 @@ import { auth } from "../../firebase";
 
 function SignUp(props) {
   const [name, setName] = React.useState("");
+  const [imageUrl, setImageUrl] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
@@ -13,6 +14,7 @@ function SignUp(props) {
       res.user
         .updateProfile({
           displayName: name,
+          photoURL: imageUrl,
         })
         .catch((err) => console.log(err));
     });
@@ -34,6 +36,13 @@ function SignUp(props) {
         onChange={(e) => setName(e.target.value)}
         className="w-3/6 h-12 pl-4 rounded-md border-solid border-2 border-gray-extraLight mb-4"
         placeholder={"full name"}
+        type={"text"}
+      />
+      <input
+        value={imageUrl}
+        onChange={(e) => setImageUrl(e.target.value)}
+        className="w-3/6 h-12 pl-4 rounded-md border-solid border-2 border-gray-extraLight mb-4"
+        placeholder={"image Url (required)"}
         type={"text"}
       />
       <input
