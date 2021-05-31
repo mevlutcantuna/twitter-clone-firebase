@@ -15,7 +15,7 @@ const SignIn = (props) => {
   const dispatch = useDispatch();
 
   const submit = () => {
-    if(email !== "" && password !== ""){
+    if(email.trim() !== "" && password.trim() !== ""){
         auth.signInWithEmailAndPassword(email, password).then((res) => {
             dispatch({ type: "GET_USER", payload: res });
             history.push("/home");
