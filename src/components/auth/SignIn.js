@@ -15,11 +15,15 @@ const SignIn = (props) => {
   const dispatch = useDispatch();
 
   const submit = () => {
-    auth.signInWithEmailAndPassword(email, password).then((res) => {
-      dispatch({ type: "GET_USER", payload: res });
-      history.push("/home");
-      localStorage.setItem("user", JSON.stringify(res.user));
-    });
+    if(email !== "" && password !== ""){
+        auth.signInWithEmailAndPassword(email, password).then((res) => {
+            dispatch({ type: "GET_USER", payload: res });
+            history.push("/home");
+            localStorage.setItem("user", JSON.stringify(res.user));
+        });
+    }else{
+        alert("Email or Password is wrong....")
+    }
   };
 
   return (

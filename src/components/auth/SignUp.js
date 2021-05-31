@@ -9,15 +9,19 @@ function SignUp(props) {
   const [password, setPassword] = React.useState("");
 
   const submit = () => {
-    auth.createUserWithEmailAndPassword(email, password).then((res) => {
-      console.log(res);
-      res.user
-        .updateProfile({
-          displayName: name,
-          photoURL: imageUrl,
-        })
-        .catch((err) => console.log(err));
-    });
+    if(name !== "" && imageUrl !== "" && email !== "" && password !== ""){
+        auth.createUserWithEmailAndPassword(email, password).then((res) => {
+            console.log(res);
+            res.user
+                .updateProfile({
+                    displayName: name,
+                    photoURL: imageUrl,
+                })
+                .catch((err) => console.log(err));
+        });
+    }else{
+        alert("Please fill out all of them....")
+    }
   };
 
   return (
