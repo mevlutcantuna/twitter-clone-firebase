@@ -11,14 +11,18 @@ function SignUp(props) {
   const submit = () => {
     if(name !== "" && imageUrl !== "" && email !== "" && password !== ""){
         auth.createUserWithEmailAndPassword(email, password).then((res) => {
-            console.log(res);
+            //console.log(res);
             res.user
                 .updateProfile({
                     displayName: name,
                     photoURL: imageUrl,
                 })
                 .catch((err) => console.log(err));
+            alert('You got sign up....')
+            props.closeSignUpModal()
         });
+
+
     }else{
         alert("Please fill out all of them....")
     }

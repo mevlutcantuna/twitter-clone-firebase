@@ -63,7 +63,7 @@ function SideBar(props) {
   React.useEffect(() => {
     const localUser = JSON.parse(localStorage.getItem("user"));
     dispatch({ type: "GET_USER", payload: { user: localUser } });
-  }, []);
+  }, [dispatch]);
 
   const logout = () => {
     auth
